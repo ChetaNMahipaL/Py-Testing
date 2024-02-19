@@ -1,0 +1,9 @@
+************* Module Lucasinitial
+Lucasinitial.py:38:0: C0304: Final newline missing (missing-final-newline)
+Lucasinitial.py:1:0: C0103: Module name "Lucasinitial" doesn't conform to snake_case naming style (invalid-name)
+Lucasinitial.py:18:4: C0103: Variable name "l" doesn't conform to snake_case naming style (invalid-name)
+Lucasinitial.py:20:8: C0103: Variable name "l" doesn't conform to snake_case naming style (invalid-name)
+
+------------------------------------------------------------------
+Your code has been rated at 8.40/10
+
