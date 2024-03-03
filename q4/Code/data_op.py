@@ -9,9 +9,14 @@ def cal_average(data):
     '''
     try:
         average_scores = {}
+        num_subjects = len(data[0]['scores'])
         for student in data:
             name = student['name']
             scores = student['scores']
+            if any(score < 0 or score > 100 for score in scores):
+                return ("Incorrect score detected.")
+            if len(scores) != num_subjects:
+                return "Incorrect number of scores detected."
             average_score = round(sum(scores) / len(scores),2)
             average_scores[name] = average_score
         return average_scores
@@ -26,7 +31,7 @@ def find_highest_scorer(dataset):
     '''
     try:
         average_scores = cal_average(dataset)
-        
+
         highest_average_score = max(average_scores.values())
         highest_average_scorer = sorted([name for name, score in average_scores.items() if score == highest_average_score])[0]
 
@@ -40,16 +45,43 @@ def find_highest_scorer(dataset):
         return highest_average_scorer, highest_subject_scorers
     except Exception as e:
         print("An error occurred while finding the highest scorer:", e)
-        return '', [[]] * len(dataset[0]['scores'])
+        return None, None
 
+def main():
+    '''
+        This is menu based user input
+    '''
+    students = []
+
+    num_students = int(input("Enter number of students: "))
+    num_subjects = int(input("Enter number of subjects: "))
+
+    for i in range(num_students):
+        name = input(f"Enter name of student {i+1}: ")
+        scores = []
+        for j in range(num_subjects):
+            score = int(input(f"Enter score for subject {j+1}: "))
+            scores.append(score)
+        student = {'name': name, 'scores': scores}
+        students.append(student)
+    print(cal_average(students))
+    avg, list_st = find_highest_scorer(students)
+    print(avg)
+    print(list_st)
+
+# if __name__ == "__main__":
+#     main()
 
 try:
-    with open('../Dataset/random_data.pkl', 'rb') as file:
+    with open('../Dataset/students_data.pkl', 'rb') as file:
         loaded_students = pickle.load(file)
 except pickle.PickleError as e:
     print("An error occurred while saving student data:", e)
-
-print(cal_average(loaded_students))
-avg, list_st = find_highest_scorer(loaded_students)
-print(avg)
-print(list_st)
+i=0
+for load in loaded_students:
+    print(i)
+    print(cal_average(load))
+    avg, list_st = find_highest_scorer(load)
+    print(avg)
+    print(list_st)
+    i += 1
