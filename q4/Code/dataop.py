@@ -52,15 +52,22 @@ def main():
         This is menu based user input
     '''
     students = []
-
-    num_students = int(input("Enter number of students: "))
-    num_subjects = int(input("Enter number of subjects: "))
+    try:
+        num_students = int(input("Enter number of students: "))
+        num_subjects = int(input("Enter number of subjects: "))
+    except ValueError:
+        print("Please enter valid integer values for number of students and subjects.")
+        exit()
 
     for i in range(num_students):
         name = input(f"Enter name of student {i+1}: ")
         scores = []
         for j in range(num_subjects):
-            score = int(input(f"Enter score for subject {j+1}: "))
+            try:
+                score = int(input(f"Enter score for subject {j+1}: "))
+            except ValueError:
+                print("Please enter valid integer values for number of students and subjects.")
+                exit()
             scores.append(score)
         student = {'name': name, 'scores': scores}
         students.append(student)
