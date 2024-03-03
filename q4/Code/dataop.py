@@ -87,7 +87,7 @@ if __name__ == "__main__":
     main()
 
 # try:
-#     with open('../Dataset/students_data.pkl', 'rb') as file:
+#     with open('../Dataset/random_data.pkl', 'rb') as file:
 #         loaded_students = pickle.load(file)
 # except pickle.PickleError as e:
 #     print("An error occurred while saving student data:", e)
