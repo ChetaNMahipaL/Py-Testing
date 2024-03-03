@@ -20,7 +20,10 @@ def main(year_old):
     """
     try:
         year_temp = int(year_old)
-        if len(year_old) == 4 and year_temp > 0:
+        if len(year_old) < 5 and year_temp > 0:
+            while len(year_old) < 4:
+                year_old = '0' + year_old
+            # print(year_old)
             day_new = year_old[2:]
             day_new = day_new[::-1]
             month_new = year_old[:2]

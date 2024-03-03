@@ -35,7 +35,7 @@ def testing_module_5():
     """
         Testcase-5 to check year without leading zero
     """
-    assert main("100") == "Enter a valid year"
+    assert main("111") == "11-10-0111"
 
 def testing_module_6():
     """
