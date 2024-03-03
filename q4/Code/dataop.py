@@ -69,19 +69,19 @@ def main():
     print(avg)
     print(list_st)
 
-# if __name__ == "__main__":
-#     main()
+if __name__ == "__main__":
+    main()
 
-try:
-    with open('../Dataset/students_data.pkl', 'rb') as file:
-        loaded_students = pickle.load(file)
-except pickle.PickleError as e:
-    print("An error occurred while saving student data:", e)
-i=0
-for load in loaded_students:
-    print(i)
-    print(cal_average(load))
-    avg, list_st = find_highest_scorer(load)
-    print(avg)
-    print(list_st)
-    i += 1
+# try:
+#     with open('../Dataset/students_data.pkl', 'rb') as file:
+#         loaded_students = pickle.load(file)
+# except pickle.PickleError as e:
+#     print("An error occurred while saving student data:", e)
+# i=0
+# for load in loaded_students:
+#     print(i)
+#     print(cal_average(load))
+#     avg, list_st = find_highest_scorer(load)
+#     print(avg)
+#     print(list_st)
+#     i += 1

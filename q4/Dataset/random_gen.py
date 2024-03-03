@@ -29,14 +29,18 @@ def create_students(num_st, num_subject):
     '''
         This function generates data structure of dictionary
     '''
-    names = generate_names(num_st)
-    scores = generate_scores(num_subject, num_st)
-    students = [{'name': name, 'scores': score} for name, score in zip(names, scores)]
-    return students
+    all_instances = []
+    for _ in range(num_instances):
+        names = generate_names(num_st)
+        scores = generate_scores(num_subject, num_st)
+        students = [{'name': name, 'scores': score} for name, score in zip(names, scores)]
+        all_instances.append(students)
+    return all_instances
 
 try:
     num_students = int(input("Enter number of students: "))
     num_subjects = int(input("Enter number of subjects: "))
+    num_instances = int(input("Enter the number of instances: "))
     students_list = create_students(num_students, num_subjects)
 except ValueError:
     print("Please enter valid integer values for number of students and subjects.")
