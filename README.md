@@ -24,7 +24,7 @@ Step-3: Run the command `pylint Lucas_1.py > <filename.txt>` to store pylint res
 ### **Q2**
 #### **Procedure**
 **Running the Code**<br>
-Step-1: Goto 'Code' directory
+Step-1: Goto 'Code' directory<br>
 Step-2: Run the program using `python3 kaprekarroutine.py`.<br>
 Step-3: Enter valid 4-digit number according to constraints provided in Question.
 Step-4: Output will be displayed on the terminal accordingly.
@@ -45,7 +45,7 @@ Run the command: `pip install pytest`
 ### **Q3**
 #### **Procedure**
 **Running the Code**<br>
-Step-1: Goto 'Code' directory
+Step-1: Goto 'Code' directory<br>
 Step-2: Run the program using `python3 palindrome.py`.<br>
 Step-3: Enter a valid year.
 Step-4: Output will be displayed on the terminal accordingly.
@@ -61,17 +61,3 @@ Step-2: Run the testcases using `python3 test.py`.
 
 ### **Q4**
 #### **Procedure**
-**Running the Code**<br>
-Step-1: Goto 'Code' directory
-Step-2: Run the program using `python3 palindrome.py`.<br>
-Step-3: Enter a valid year.
-Step-4: Output will be displayed on the terminal accordingly.
-
-**Running the Testing File**<br>
-Step-1: Goto the 'testcases' directory.<br>
-Step-2: Run the testcases using `python3 test.py`.
-
-**Assumptions**<br>
-- The testcases file must be run from the directory itself as it uses the relative path for importing the module.
-- The input is taken as string.
-- The condition which a particular test is checking, has been mentioned in docstring of each testcase function.
