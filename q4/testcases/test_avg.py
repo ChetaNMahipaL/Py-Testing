@@ -22,7 +22,7 @@ def test_mod_1():
 
 def test_mod_2():
     """
-        Testcase-1 to check normal ans
+        Testcase-2 to check normal ans
     """
     assert cal_average(loaded_students[1]) == {'John Kirkman': 91.33, 'Emily Rhodes': 89.67, 'Aaron Shore': 90.33, 'Ray Atwood': 84.33, 'Penny Wells': 78.67, 'Mark Richmond': 79.0, 'Seth Wright': 91.33}
 
@@ -40,7 +40,7 @@ def test_mod_4():
 
 def test_mod_5():
     """
-        Testcase-5 to check with score entry  zero
+        Testcase-5 to check with score entry zero
     """
     assert cal_average(loaded_students[4]) == {'John Kirkman': 91.33, 'Emily Rhodes': 89.0, 'Aaron Shore': 90.33, 'Ray Atwood': 84.33, 'Penny Wells': 78.67, 'Mark Richmond': 79.0, 'Seth Wright': 61.0}
 

@@ -22,13 +22,13 @@ def test_mod_1():
 
 def test_mod_2():
     """
-        Testcase-1 to check lexo graphic order for tie breaking for avg
+        Testcase-2 to check lexo graphic order for tie breaking for avg
     """
     assert find_highest_scorer(loaded_students[1]) == ("John Kirkman", ['John Kirkman', 'Emily Rhodes', 'Emily Rhodes'])
 
 def test_mod_3():
     """
-        Testcase-3 to check with negative  score
+        Testcase-3 to check with negative score
     """
     assert find_highest_scorer(loaded_students[2]) == (None, None)
 

@@ -55,9 +55,12 @@ def main():
     try:
         num_students = int(input("Enter number of students: "))
         num_subjects = int(input("Enter number of subjects: "))
+        if num_students < 1 or num_subjects < 1:
+            print("Please enter valid integer values for number of students and subjects.")
+            return("Please enter valid integer values for number of students and subjects.")
     except ValueError:
         print("Please enter valid integer values for number of students and subjects.")
-        exit()
+        return("Please enter valid integer values for number of students and subjects.")
 
     for i in range(num_students):
         name = input(f"Enter name of student {i+1}: ")
@@ -65,9 +68,12 @@ def main():
         for j in range(num_subjects):
             try:
                 score = int(input(f"Enter score for subject {j+1}: "))
+                if score < 0 or score > 100:
+                    print("Incorrect Score Entered.")
+                    return("Incorrect Score Entered.")
             except ValueError:
-                print("Please enter valid integer values for number of students and subjects.")
-                exit()
+                print("Please enter valid integer values for scores")
+                return("Please enter valid integer values for scores")
             scores.append(score)
         student = {'name': name, 'scores': scores}
         students.append(student)
@@ -75,6 +81,7 @@ def main():
     avg, list_st = find_highest_scorer(students)
     print(avg)
     print(list_st)
+    return cal_average(students), avg, list_st
 
 if __name__ == "__main__":
     main()
